@@ -19,13 +19,21 @@ MultiQAudioProcessor::MultiQAudioProcessor()
                       #endif
                        .withOutput ("Output", juce::AudioChannelSet::stereo(), true)
                      #endif
-                       )
+                       ),
+treeState(*this, nullptr, "PARAMETERS", createParameterLayout())
 #endif
 {
 }
 
 MultiQAudioProcessor::~MultiQAudioProcessor()
 {
+}
+
+juce::AudioProcessorValueTreeState::ParameterLayout MultiQAudioProcessor::createParameterLayout()
+{
+    std::vector<std::unique_ptr<juce::RangedAudioParameter>> params;
+    
+    return {params.begin(), params.end()};
 }
 
 //==============================================================================

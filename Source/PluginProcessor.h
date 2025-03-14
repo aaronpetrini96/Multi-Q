@@ -53,6 +53,8 @@ public:
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
     
+    juce::AudioProcessorValueTreeState treeState;
+    
     juce::ValueTree variableTree
     {
         "Variables", {},
@@ -71,6 +73,8 @@ public:
     float windowHeight {0.f};
 
 private:
+    
+    juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MultiQAudioProcessor)
 };
