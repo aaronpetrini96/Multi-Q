@@ -4,6 +4,67 @@
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" companyName="Aaron Petrini">
   <MAINGROUP id="yOXyNw" name="Multi-Q">
     <GROUP id="{1217E876-32E3-444E-653D-6B51CB2A5698}" name="Source">
+      <GROUP id="{B5EBF6AA-91CB-5DAA-7C0A-74867D9930FD}" name="UI-Methods">
+        <FILE id="XTyHz9" name="OversamplingMenu.cpp" compile="1" resource="0"
+              file="Source/UI-Methods/OversamplingMenu.cpp"/>
+        <FILE id="dwWnUr" name="UI-Constructor.cpp" compile="1" resource="0"
+              file="Source/UI-Methods/UI-Constructor.cpp"/>
+        <FILE id="CImhqa" name="UI-InitWindow.cpp" compile="1" resource="0"
+              file="Source/UI-Methods/UI-InitWindow.cpp"/>
+        <FILE id="arnxHb" name="UI-Paint.cpp" compile="1" resource="0" file="Source/UI-Methods/UI-Paint.cpp"/>
+        <FILE id="QFIxgS" name="UI-Resized.cpp" compile="1" resource="0" file="Source/UI-Methods/UI-Resized.cpp"/>
+        <FILE id="xTrU0r" name="UI-SaveWindow.cpp" compile="1" resource="0"
+              file="Source/UI-Methods/UI-SaveWindow.cpp"/>
+      </GROUP>
+      <GROUP id="{5D89EC52-24BC-78B3-9A97-D75D724288A9}" name="Assets">
+        <GROUP id="{ED305834-F192-FD0A-0297-AE49D65A3011}" name="decor">
+          <FILE id="KRbkOQ" name="decor_grid.png" compile="0" resource="1" file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/decor/decor_grid.png"/>
+          <FILE id="tB9PuH" name="screw.png" compile="0" resource="1" file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/decor/screw.png"/>
+        </GROUP>
+        <GROUP id="{1DE3FC82-10BD-EEB3-10F3-A1840AC30A3C}" name="faders">
+          <FILE id="Bm51Iz" name="Ver_flat_slider.png" compile="0" resource="1"
+                file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/faders/Ver_flat_slider.png"/>
+          <FILE id="JAwV1V" name="Ver_slider.png" compile="0" resource="1" file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/faders/Ver_slider.png"/>
+        </GROUP>
+        <GROUP id="{9D05632C-7DB6-6E43-63F8-457A2BB704FC}" name="knobs">
+          <FILE id="lUk9wp" name="Knob_01.png" compile="0" resource="1" file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/knobs/Knob_01.png"/>
+          <FILE id="ot3kHz" name="Knob_02.png" compile="0" resource="1" file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/knobs/Knob_02.png"/>
+          <FILE id="oJXWft" name="Knob_03.png" compile="0" resource="1" file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/knobs/Knob_03.png"/>
+          <FILE id="zoBMpU" name="Knob_04.png" compile="0" resource="1" file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/knobs/Knob_04.png"/>
+          <FILE id="V8qMZy" name="Knob_05.png" compile="0" resource="1" file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/knobs/Knob_05.png"/>
+          <FILE id="siZk20" name="Knob_06.png" compile="0" resource="1" file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/knobs/Knob_06.png"/>
+          <FILE id="gx0CUd" name="Knob_07.png" compile="0" resource="1" file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/knobs/Knob_07.png"/>
+          <FILE id="kjFvno" name="Knob_08.png" compile="0" resource="1" file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/knobs/Knob_08.png"/>
+          <FILE id="p7ysWg" name="Knob_09.png" compile="0" resource="1" file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/knobs/Knob_09.png"/>
+          <FILE id="yxB30J" name="Knob_10.png" compile="0" resource="1" file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/knobs/Knob_10.png"/>
+        </GROUP>
+        <GROUP id="{EC573872-560A-F70E-8ED9-332ACC309151}" name="vu-meter">
+          <FILE id="RBRF2T" name="back_vu-meter_decore5.png" compile="0" resource="1"
+                file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/vu-meter/back_vu-meter_decore5.png"/>
+          <FILE id="joSRvI" name="scale_vu-meter.png" compile="0" resource="1"
+                file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/vu-meter/scale_vu-meter.png"/>
+          <FILE id="Ps7Qgi" name="scale_vu-meterno_name.png" compile="0" resource="1"
+                file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/vu-meter/scale_vu-meterno_name.png"/>
+          <FILE id="Cyl7iU" name="vu_meter.png" compile="0" resource="1" file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/vu-meter/vu_meter.png"/>
+        </GROUP>
+        <FILE id="AC2suo" name="back.png" compile="0" resource="1" file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/back.png"/>
+        <FILE id="oU8cXu" name="back_d.png" compile="0" resource="1" file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/back_d.png"/>
+        <FILE id="sHAEAl" name="but_small_rec_off.png" compile="0" resource="1"
+              file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/but_small_rec_off.png"/>
+        <FILE id="Kd9y2t" name="but_small_rec_on.png" compile="0" resource="1"
+              file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/but_small_rec_on.png"/>
+        <FILE id="HC5aOH" name="hor_flat_slider.png" compile="0" resource="1"
+              file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/hor_flat_slider.png"/>
+        <FILE id="in5SL3" name="Knob_mid.png" compile="0" resource="1" file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/Knob_mid.png"/>
+        <FILE id="wMrTx5" name="Knob_small.png" compile="0" resource="1" file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/Knob_small.png"/>
+        <FILE id="MCuT9Z" name="landon.png" compile="0" resource="1" file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/landon.png"/>
+        <FILE id="BXA9si" name="LED_meter.png" compile="0" resource="1" file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/LED_meter.png"/>
+        <FILE id="jzK6bZ" name="screen.png" compile="0" resource="1" file="../viator-graphic-eq-main/viator-graphic-eq/Source/Assets/screen.png"/>
+      </GROUP>
+      <GROUP id="{DDE2E486-09D8-E678-5419-C5C3BF315D56}" name="UI-Components">
+        <FILE id="ltEvUR" name="AA_Window.h" compile="0" resource="0" file="Source/AA_Window.h"/>
+        <FILE id="lBjl6n" name="AA_Window.cpp" compile="1" resource="0" file="Source/AA_Window.cpp"/>
+      </GROUP>
       <FILE id="G0cJSz" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="sUkbj2" name="PluginProcessor.h" compile="0" resource="0"

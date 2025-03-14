@@ -52,6 +52,23 @@ public:
     //==============================================================================
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
+    
+    juce::ValueTree variableTree
+    {
+        "Variables", {},
+        {
+            {"Group", {{"name", "vars"}},
+                {
+                    {"Parameter", {{"id", "width"}, {"value", 0.0}}},
+                    {"Parameter", {{"id", "height"}, {"value", 0.0}}},
+                }
+            }
+        }
+    };
+    
+//    ==Window Vars ===
+    float windowWidth {0.f};
+    float windowHeight {0.f};
 
 private:
     //==============================================================================
