@@ -29,13 +29,16 @@ private:
     // access the processor object that created it.
     MultiQAudioProcessor& audioProcessor;
     
+    /** UI stuff **/
     void uiConstructor();
     void initWindow();
     void uiPaint(juce::Graphics&);
     void uiResized();
     void saveWindowSize();
-    
     bool constructorFinished = false;
+    
+    /* Global EQ choice */
+    juce::TextButton graphicEQButton, paraEQButton, tubeEQButton;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MultiQAudioProcessorEditor)
 };

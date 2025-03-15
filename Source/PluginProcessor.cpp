@@ -23,17 +23,30 @@ MultiQAudioProcessor::MultiQAudioProcessor()
 treeState(*this, nullptr, "PARAMETERS", createParameterLayout())
 #endif
 {
+    treeState.addParameterListener("trim", this);
 }
 
 MultiQAudioProcessor::~MultiQAudioProcessor()
 {
+    treeState.removeParameterListener("trim", this);
 }
 
 juce::AudioProcessorValueTreeState::ParameterLayout MultiQAudioProcessor::createParameterLayout()
 {
     std::vector<std::unique_ptr<juce::RangedAudioParameter>> params;
     
+    auto trimParam = std::make_unique<juce::AudioParameterFloat>(juce::ParameterID("trim", 1), "Trim", -24.f, 24.f, 0.f);
+    
+    params.push_back(std::move(trimParam));
+    
     return {params.begin(), params.end()};
+}
+
+void MultiQAudioProcessor::parameterChanged(const juce::String &parameterID, float newValue)
+{
+    if (parameterID == "trim") {
+        DBG(newValue);
+    }
 }
 
 //==============================================================================
@@ -175,20 +188,31 @@ bool MultiQAudioProcessor::hasEditor() const
 juce::AudioProcessorEditor* MultiQAudioProcessor::createEditor()
 {
     return new MultiQAudioProcessorEditor (*this);
+//    return new juce::GenericAudioProcessorEditor(*this);
 }
 
 //==============================================================================
 void MultiQAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
 {
-    // You should use this method to store your parameters in the memory block.
-    // You could do that either as raw data, or use the XML or ValueTree classes
-    // as intermediaries to make it easy to save and load complex data.
+    // save params
+    treeState.state.appendChild(variableTree, nullptr);
+    juce::MemoryOutputStream stream(destData, false);
+    treeState.state.writeToStream(stream);
 }
 
 void MultiQAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
-    // You should use this method to restore your parameters from this memory block,
-    // whose contents will have been created by the getStateInformation() call.
+    // recall params
+    auto tree = juce::ValueTree::readFromData(data, size_t(sizeInBytes));
+    variableTree = tree.getChildWithName("Variables");
+    
+    if (tree.isValid()) {
+        treeState.state = tree;
+        
+        //window size
+        windowWidth = variableTree.getProperty("width");
+        windowHeight = variableTree.getProperty("height");
+    }
 }
 
 //==============================================================================
